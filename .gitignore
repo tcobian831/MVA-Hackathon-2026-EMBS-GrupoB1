@@ -1,0 +1,5 @@
+*.vcf
+*.vep
+*.gz
+*.txt
+*.log
