@@ -21,7 +21,6 @@ CLINSIG_SPLIT = re.compile(r"[&/]")
 
 
 def header_lines(window: int) -> list[str]:
-    """Lines inserted immediately before #CHROM (must match filterVars.sh exactly)."""
     return [
         '##INFO=<ID=F1_REASON,Number=.,Type=String,Description="Filter 1 (annotation) rules '
         'that kept this record: HIGH_MODERATE, SPLICE, MVA_WINDOW, CLINVAR_PLP, CLINVAR_CONFLICTING">\n',
@@ -55,7 +54,6 @@ def main() -> int:
     n_in = n_out = 0
     idx = None
 
-    # surrogateescape + newline="" keep the bytes exactly as they are in the input.
     with opener(args.input, "rt", encoding="utf-8", errors="surrogateescape", newline="") as fin, \
          open(args.output, "w", encoding="utf-8", errors="surrogateescape", newline="") as fout:
         for line in fin:
@@ -76,7 +74,6 @@ def main() -> int:
             chrom, pos = line[:tab1], int(line[tab1 + 1:tab2])
             in_window = any(lo <= pos <= hi for lo, hi in windows.get(chrom, ()))
 
-            # Fast path: every annotation rule needs one of these words somewhere in the line.
             if not in_window and not ("HIGH" in line or "MODERATE" in line
                                       or "splice_" in line or "pathogenic" in line):
                 continue
