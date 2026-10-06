@@ -17,7 +17,6 @@ BEGIN {
     nreason = split("HIGH_MODERATE SPLICE MVA_WINDOW CLINVAR_PLP CLINVAR_CONFLICTING", REASON, " ")
 }
 
-# 1st input: gene coordinate table -> windows per chromosome
 FNR == NR {
     if ($0 ~ /^#/ || $0 ~ /^[ \t]*$/) next
     nw[$2]++
@@ -26,7 +25,6 @@ FNR == NR {
     next
 }
 
-# 2nd input: the VCF
 /^#/ {
     if (index($0, "##INFO=<ID=CSQ,") == 1) {
         f = $0
@@ -50,7 +48,6 @@ FNR == NR {
     inwin = 0
     for (k = 1; k <= nw[$1]; k++) if (pos >= lo[$1, k] && pos <= hi[$1, k]) { inwin = 1; break }
 
-    # Fast path: every annotation rule needs one of these words somewhere in the line.
     if (!inwin && $0 !~ /HIGH|MODERATE|splice_|pathogenic/) next
 
     hm = sp = plp = conf = 0
