@@ -1,0 +1,17 @@
+# MVA / MVA-spectrum genes for Filter 1 rule MVA_WINDOW.
+# Coordinates: GRCh38, Ensembl REST /lookup/symbol (Ensembl 116), retrieved 2026-10-04.
+# Chromosome names match the VCF (no "chr" prefix). Window applied = start - W .. end + W (W default 100000).
+# Gene list: docs MVA review; window size: BUB1B regulatory variant 44 kb upstream (PMID 24344301).
+#gene	chrom	start	end	strand
+BUB1B	15	40160984	40221137	+
+CEP57	11	95789965	95837070	+
+TRIP13	5	892849	919357	+
+CENATAC	11	118998051	119015811	+
+MAD1L1	7	1815787	2233243	-
+MAD2L1BP	6	43629494	43640960	+
+CEP192	18	12991283	13125053	+
+BUB1	2	110635468	110678098	-
+CDC20	1	43358907	43363212	+
+SLF2	10	100912963	100965134	+
+SMC5	9	70258270	70354874	+
+BUB3	10	123154365	123313144	+
