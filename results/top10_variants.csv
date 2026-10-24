@@ -1,0 +1,14 @@
+rank,gene,mean_definitive_percent,id,variant,chrom,pos,ref,alt,gt,dp,gq,cadd,grpmax_pct,phase_status,in_ranking_baseline
+1,BUB1B,81.25825888989553,6,Leu737Ter,chr15,40209701,T,G,0/1,46,99,36.0,0.00735,unknown between selected variants,True
+1,BUB1B,81.25825888989553,7,Asn1002Lys,chr15,40220612,T,G,0/1,28,99,24.5,,unknown between selected variants,True
+2,TACC2,53.88189989495476,28,Ser1562Ter,chr10,122087185,C,G,0/1,55,99,34.0,0.00147,unknown between selected variants,True
+2,TACC2,53.88189989495476,35,intronic_del1bp,chr10,122194203,CA,C,0/1,44,99,,0.00294,unknown between selected variants,False
+3,SMC4,52.448505851677055,25,Asp256Asn,chr3,160411998,G,A,0/1,30,99,33.0,0.00147,single heterozygous candidate,True
+4,SVIL,50.15930849510379,27,Ala2072Thr,chr10,29463555,C,T,0/1,31,99,26.9,,single heterozygous candidate,True
+5,LZTR1,49.67695539395081,16,Tyr748Ter,chr22,20996720,C,G,0/1,48,99,49.0,,single heterozygous candidate,True
+6,CTU2,46.54147065306034,11,donor_del6bp,chr16,88714226,AGGTGTG,A,1/1,27,82,33.0,,same variant on both copies (GT 1/1),True
+7,DIDO1,45.840845017750034,12,donor_del7bp,chr20,62926430,ACCGCAGG,A,0/1,24,99,23.4,,single heterozygous candidate,True
+8,PRMT6,44.646157428668474,21,Gly12Arg,chr1,107056749,G,C,0/1,37,99,24.6,0.0147,single heterozygous candidate,True
+9,LRP4,38.800893950824765,15,Arg1365Gln,chr11,46874935,C,T,0/1,46,99,27.7,0.00147,unknown between selected variants,True
+9,LRP4,38.800893950824765,34,Asn1022Asp,chr11,46878979,T,C,0/1,43,99,19.53,0.1661,unknown between selected variants,False
+10,TRDMT1,37.53297903334089,30,Leu377Phe,chr10,17149087,G,A,0/1,51,99,28.9,,single heterozygous candidate,True

@@ -1,6 +1,5 @@
-# Restricted inputs
+# Genomic inputs
 
-Place WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz here after authorized access. It is supplied only in the separate private archive, outside the GitHub tree. Original pre-VEP VCF: 5,012,204 records. Full VEP VCF: 4,943,948 records, SHA256 241794bdd20d3b10a4c4b33121851daf86b1cb1515f4d0c67d1d20cd7ad3e054.
+Authorized input: WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz. The VEP file contains 4,943,948 records; the original pre-VEP VCF contains 5,012,204. Input SHA256 values are recorded in config/input_sha256.json.
 
-Official access: https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data
-Do not publish raw data or its private-access links. Follow the data deletion obligations in the challenge rules.
+Access is controlled through https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data. Raw genomic files are excluded from version control and remain subject to the challenge data-use and retention rules.

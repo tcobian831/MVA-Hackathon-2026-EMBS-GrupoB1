@@ -25,7 +25,7 @@ def header_lines(controls: str) -> list[str]:
         f'NO_GRPMAX (AF only in excluded groups), COMMON_IN_EXCLUDED_GROUP (AF>={MAX_AF:g} in {",".join(EXCLUDED_GROUPS)}), '
         f'GLOBAL_AF_COMMON (gnomADg_AF>={MAX_AF:g}), POSITIVE_CONTROL">\n',
         f'##Filter3=<Version="1.0",Rule="F3_GRPMAX<{MAX_AF:g}",Missing="kept",Groups="{groups}",Excluded="{",".join(EXCLUDED_GROUPS)}",'
-        f'AlleleMatched="yes",PositiveControls="{controls} always kept",Spec="docs/15_FILTER3_RARITY.md">\n',
+        f'AlleleMatched="yes",PositiveControls="{controls} always kept",Spec="docs/reproducibility.md">\n',
     ]
 
 

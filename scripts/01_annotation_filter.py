@@ -24,7 +24,7 @@ def header_lines(window: int) -> list[str]:
     return [
         '##INFO=<ID=F1_REASON,Number=.,Type=String,Description="Filter 1 (annotation) rules '
         'that kept this record: HIGH_MODERATE, SPLICE, MVA_WINDOW, CLINVAR_PLP, CLINVAR_CONFLICTING">\n',
-        f'##Filter1=<Version="1.0",Window={window},Spec="docs/07_FILTER1_AUDIT.md section E",'
+        f'##Filter1=<Version="1.0",Window={window},Spec="docs/reproducibility.md",'
         'CSQ="unchanged",QualityRarity="not applied">\n',
     ]
 

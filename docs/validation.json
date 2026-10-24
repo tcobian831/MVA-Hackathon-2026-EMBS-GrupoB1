@@ -4,8 +4,8 @@
     "filter2": "records_in\t26375\nmain_output\t2430\nno_cadd_output\t41\nremoved\t23904\npositive_controls_loaded\t159\noutside_kept\t2181\noutside_kept_positive_control\t0\noutside_no_cadd_list\t29\noutside_removed_quality\t498\noutside_removed_cadd\t19121\nwindow_kept\t248\nwindow_kept_positive_control\t1\nwindow_no_cadd_list\t12\nwindow_removed_quality\t0\nwindow_removed_cadd\t4285\nelapsed_seconds\t1\n",
     "filter3": "records_in\t2430\nkept\t235\nremoved\t2195\npositive_controls_loaded\t159\noutside_kept\t191\noutside_kept_no_freq\t36\noutside_kept_positive_control\t0\noutside_removed_common\t1954\nwindow_kept\t5\nwindow_kept_no_freq\t2\nwindow_kept_positive_control\t1\nwindow_removed_common\t241\nsensitivity_global_rule_keeps\t295\nsensitivity_all_groups_rule_keeps\t206\nsensitivity_bub1b_1_to_5pct\t0\nsensitivity_removed_only_by_mid\t14\nelapsed_seconds\t0\n",
     "filter3_pending": "records_in\t41\nkept\t11\nremoved\t30\npositive_controls_loaded\t159\noutside_kept\t3\noutside_kept_no_freq\t6\noutside_kept_positive_control\t0\noutside_removed_common\t20\nwindow_kept\t0\nwindow_kept_no_freq\t2\nwindow_kept_positive_control\t0\nwindow_removed_common\t10\nsensitivity_global_rule_keeps\t12\nsensitivity_all_groups_rule_keeps\t11\nsensitivity_bub1b_1_to_5pct\t0\nsensitivity_removed_only_by_mid\t1\nelapsed_seconds\t0\n",
-    "shortlist": "MVA_FINAL_v1_2026-10-14\nSelected: 60 | with AF: 32 | without AF: 28\nSelected priorities: {'intermediate': 46, 'high': 13, 'low': 1}\nPending without CADD: 8 (NOT part of selected candidates)\nKnown BUB1B control found: True\nOutput: /workspace/scratch/c635aeb6a28d/repo_rebuild/historical_shortlist\n",
-    "curation_run": "Validated 4943948 source records; 31 curated variants in 28 genes\n",
+    "shortlist": "MVA_FINAL_v1_2026-10-14\nSelected: 60 | with AF: 32 | without AF: 28\nSelected priorities: {'intermediate': 46, 'high': 13, 'low': 1}\nPending without CADD: 8 (NOT part of selected candidates)\nKnown BUB1B control found: True\n",
+    "curation_run": "Validated full VEP: 31 called alleles in 28 curated genes; DP, GQ, GT, AD and gene annotations agree.\n",
     "expansion": "Scanned 4943948 VCF records; wrote 2441 gene/allele review rows\n",
     "replayed_cadd": "Annotated records: 26375\n"
   },
@@ -21,5 +21,20 @@
   "ranking_genes": 28,
   "post_ranking_additions": 2,
   "consensus_matches_four_original_scores_without_MAD2L1BP": true,
-  "chronology": "28 genes -> individual matrix scores -> four-person mean -> top ten -> additional variant review"
+  "chronology": "28 genes -> individual matrix scores -> four-person mean -> top ten -> additional variant review",
+  "exact_curated_ALT_GT_AD_checks": true,
+  "final_top10_genes": [
+    "BUB1B",
+    "TACC2",
+    "SMC4",
+    "SVIL",
+    "LZTR1",
+    "CTU2",
+    "DIDO1",
+    "PRMT6",
+    "LRP4",
+    "TRDMT1"
+  ],
+  "final_top10_variant_records": 13,
+  "baseline_consensus_unchanged": true
 }

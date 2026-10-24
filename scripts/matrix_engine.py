@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Corrected gene matrix adapted from Lucia's wmatrix.py.
-Install: python -m pip install numpy pandas scipy
-Run: python wmatrix_corrected.py
-Input: embedded original table of 31 variants in 28 genes.
-Complete MANUAL_SCORES to obtain the final ranking and sensitivity analysis.
-Each run creates a new timestamped output directory to avoid stale results.
-All listed variants contribute to gene averages; none is excluded.
+"""Shared decision matrix for the 28-gene baseline.
+Entry point: scripts/08_decision_matrix.py.
+Manual fields: MVA link, phenotype fit and literature evidence, each in [0, 2].
 """
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +19,7 @@ from scipy.stats import binomtest
 #     [MVA link, phenotype fit, literature evidence]
 # Each completed score must be a finite float between 0.0 and 2.0 inclusive.
 # Integers in this range are accepted and converted to floats.
-# None is an EMPTY placeholder: replace every None with your own score.
+# None denotes a missing manual score; complete scores are required for ranking.
 # Completed-format example only: "GENE_SYMBOL": [1.5, 2.0, 0.5]
 # All 28 genes intentionally start empty. Missing values are NEVER set to zero.
 MANUAL_SCORES = {
@@ -72,8 +68,8 @@ W = {"mva": 5.0, "pheno": 4.5, "effect": 3.5, "zyg": 2.5,
      "freq": 2.0, "cadd": 1.5, "lit": 1.0, "call": 0.25}
 # =================== END OF MANUAL EDITING SECTION ===================
 
-# Data transcribed from document. grpmax_pct = max group frequency in % (blank = ND)
-CSV = (ROOT / "results" / "curated_variants.csv").read_text()
+# Curated baseline input; grpmax_pct is a percentage (blank = unavailable).
+CSV = Path(__import__("os").environ.get("MVA_CURATED_CSV", str(ROOT / "results" / "curated_variants.csv"))).read_text()
 v = pd.read_csv(io.StringIO(CSV))
 
 # Sanity checks against the document

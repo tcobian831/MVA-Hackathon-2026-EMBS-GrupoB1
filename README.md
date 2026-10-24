@@ -1,153 +1,178 @@
 # MVA Hackathon 2026 — EMBS Grupo B1
 
-A modular reconstruction of the team's variant-prioritization workflow for Track 1.
+Variant prioritization for a child with confirmed mosaic variegated aneuploidy (MVA), integrating genomic annotations, clinical interpretation and four independent assessments.
 
-## What this repository reproduces
+## Analysis overview
 
-This repository separates **automated filtering**, **documented human curation**, **a subsequent genome-wide partner search**, and **decision-matrix ranking**. Human biological review is recorded as an explicit input, rather than disguised as an automatic filter. Four assessors' recorded manual scores are reused without modification to recompute comparable rankings on the baseline variant set.
+The analysis has four components:
 
-Group ranking input: **31 variant entries in 28 genes**, after excluding MAD2L1BP and its two window insertions. After the group ranking was established, two additional variants were retained for review: LR2 and T18. These later additions do not change the ranking input or consensus reported here. The combined review inventory has 33 variants; the ranking baseline has 31. Stable IDs are not record counts.
+1. Annotation, normalization, CADD annotation and automated filtering.
+2. Biological review and a recorded selection of **31 variants in 28 genes**.
+3. A decision matrix completed independently by Quetzally, Daniel, Lucía and Tomás, followed by an equal-weight average of their definitive scores.
+4. A subsequent search for additional variants in the full VEP dataset. Two additional candidates were retained for TACC2 and LRP4; this review does not alter the group ranking.
 
-The original caller VCF has **5,012,204 records**; the complete VEP-annotated input has **4,943,948 records**. They are different files. The restricted VEP file is supplied in the separate **private inputs archive**, not in this public-repository ZIP. Access the official dataset through https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data. Do not upload the private archive to GitHub.
+The original VCF contains **5,012,204 records**. The full VEP-annotated VCF contains **4,943,948 records**. These record counts refer to different files, and neither should be interpreted as a count of distinct candidate genes.
 
-## Directory guide
+## Reproducibility and manual review
 
-| Path | Purpose |
+The biological selection is an explicit part of the analysis. `config/curated_variants.csv` records the accepted baseline alleles, and `docs/curation_history.md` documents the scientific review. Stage 07 checks these exact called alleles against the full VEP, including allele-specific gene annotations, genotype, depth and allele counts. It produces the 31-variant, 28-gene input to the matrix.
+
+The 28 genes are therefore reproduced **with the recorded manual decisions as inputs**. Automated annotation and numeric filters alone do not determine this gene set. The stricter historical filter in stage 06 is a parallel candidate-review branch; its output is not the sole source of the manually selected variants. This distinction is necessary to reproduce the analysis as performed.
+
+The recorded four-person mean is reproduced by stage 08. The additional TACC2 and LRP4 alleles are stored separately and are not included in this mean. Reference-based normalization requires the exact reference FASTA; the available validation uses the recorded normalized checkpoint for stages 03–06. Validation scope is detailed in `docs/reproducibility.md` and `docs/validation.json`.
+
+## Repository structure
+
+| Path | Contents |
 |---|---|
-| `scripts/01_annotation_filter.py` | One canonical implementation of the initial annotation/window filter. |
-| `scripts/02_normalize.sh` | Reference-checked chromosome renaming, multiallelic splitting and left normalization. |
-| `scripts/03_add_cadd.py` | Exact-allele replay of the frozen CADD v1.7 annotation checkpoint. |
-| `scripts/04_quality_cadd.py` | Daniel's quality/CADD rules and missing-CADD branch. |
-| `scripts/05_rarity.py` | Allele-matched six-population groupmax rarity filter. |
-| `scripts/06_shortlist_filter.py` | Historical stricter shortlist branch; does not automatically produce the manually selected genes. |
-| `scripts/07_curate.py` | Replay the documented human selection, validating positions, gene annotations, DP and GQ against the full VEP. |
-| `scripts/08_decision_matrix.py` | **Final analytical stage**: run the shared matrix for one or all four assessors and calculate their consensus. |
-| `tools/review_additional_variants.py` | Separate post-ranking review; never feeds additional variants back into the group consensus. |
-| `scripts/matrix_engine.py` | Shared scoring implementation used by stage 08; no second scoring algorithm. |
-| `scripts/quality_helpers.py` | Shared access to stage 04's functions; no duplicated rules. |
-| `config/` | Gene windows, positive controls, explicit curated variants, manual scores, input hashes. |
-| `data/annotations/` | Frozen exact-allele annotation snapshots needed to reproduce scores without changing online databases. |
-| `results/` | Current four-assessor results, consensus and review audit; clearly dated reconstruction, not original participant reruns. |
-| `docs/` | Selection rationale, numerical validation, migration decisions and limitations. |
+| `scripts/01_annotation_filter.py` | Initial annotation/window filter. |
+| `scripts/02_normalize.sh` | Chromosome renaming, reference checking, normalization and multiallelic splitting. |
+| `scripts/03_add_cadd.py` | Exact-allele annotation using the fixed CADD v1.7 table. |
+| `scripts/04_quality_cadd.py` | Quality/CADD filtering, with a separate missing-CADD branch. |
+| `scripts/05_rarity.py` | Allele-matched population groupmax filtering. |
+| `scripts/06_shortlist_filter.py` | Historical stricter shortlist branch. |
+| `scripts/07_curate.py` | Validation and export of the manually curated 28-gene baseline. |
+| `scripts/08_decision_matrix.py` | Final pipeline stage: individual rankings, group consensus and final gene/variant tables. |
+| `scripts/matrix_engine.py`, `scripts/quality_helpers.py` | Shared implementation modules. |
+| `tools/review_additional_variants.py` | Subsequent additional-variant review. |
+| `config/curated_variants.csv` | The 31 baseline alleles and their scoring annotations. |
+| `config/participant_manual_scores.json` | The four assessors' recorded manual scores. |
+| `config/post_ranking_additions.csv` | LR2 and T18, retained after ranking. |
+| `data/annotations/` | Fixed CADD annotation tables. |
+| `results/` | Recorded individual rankings, consensus and variant-review tables. |
+| `docs/` | Scientific curation, references and validation records. |
 
-## Setup and inputs
+## Inputs and software
 
-Python 3.12 was used for validation. Install the pinned Python dependencies:
+The genomic data require authorized access through the [official dataset](https://huggingface.co/datasets/SageBio/mva-hackathon-2026-data). Raw genomic files and reference sequences are excluded from version control. The full annotated input location is:
+
+`data/raw/WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz`
+
+Input SHA256 values are recorded in `config/input_sha256.json`. The normalization reference is `GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna`; details appear in `data/reference/README.md`.
+
+Python dependencies are fixed in `requirements.txt`. Validation used Python 3.12. Normalization additionally requires bash, bcftools and tabix; the recorded historical command used version 1.19.
 
 ```bash
 python -m venv .venv
-# Linux/macOS: source .venv/bin/activate
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Linux/macOS activation: source .venv/bin/activate
+# Windows PowerShell activation: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 ```
 
-Normalization additionally needs bash, bcftools and tabix (historical version 1.19), plus the exact reference FASTA named in `data/reference/README.md`. Use Linux, macOS or WSL for that stage. The reference is an external dependency; it is not bundled.
+## Pipeline stages
 
-Place the authorized VEP input at `data/raw/WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz`. Verify SHA256 against `config/input_sha256.json` before a fresh run. The separate private archive also supplies the historical normalized checkpoint, enabling a verified restart after normalization.
-
-## Stages, in execution order
-
-### 01 — Annotation-based retention
+### 01 — Annotation filter
 
 ```bash
 python scripts/01_annotation_filter.py data/raw/WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz results/filter1.vcf
 ```
 
-Input: complete VEP VCF. Output: VCF with all existing CSQ annotations preserved and `F1_REASON` added. The conditions are joined by **OR**:
+A record is retained if any of the following criteria holds:
 
-* HIGH or MODERATE impact on a canonical transcript.
-* One of `splice_region_variant`, `splice_donor_5th_base_variant`, `splice_donor_region_variant`, `splice_polypyrimidine_tract_variant` on a canonical transcript.
-* Position inside a configured MVA gene interval extended by **100,000 bp on both sides**.
-* ClinVar pathogenic/likely pathogenic, or conflicting classifications of pathogenicity, in a CSQ annotation.
+- HIGH or MODERATE impact in a canonical transcript.
+- A canonical-transcript consequence in `splice_region_variant`, `splice_donor_5th_base_variant`, `splice_donor_region_variant` or `splice_polypyrimidine_tract_variant`.
+- Position inside a configured MVA-gene interval extended by **100 kb on each side**.
+- A pathogenic/likely pathogenic or conflicting-pathogenicity ClinVar annotation.
 
-No DP, GQ, CADD or frequency filtering occurs here. The supplied 12-gene window table includes MAD2L1BP for historical reproduction; keeping that historical rescue rule does not reintroduce MAD2L1BP into the final 28-gene matrix. **Verified: 4,943,948 → 26,167 VCF records.**
+Existing CSQ annotations are preserved and `F1_REASON` records the retention criteria. No quality, frequency or CADD cutoff is applied at this stage. The configured 12-gene window panel is retained as a historical filtering input; it is distinct from the final 28-gene set. Observed output: **26,167 records**.
 
-### 02 — Normalize and split alleles
+### 02 — Normalization
 
 ```bash
 bash scripts/02_normalize.sh results/filter1.vcf data/reference/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna results/filter1.norm.vcf.gz
 ```
 
-Input: stage 01 plus exact reference. Output: normalized compressed VCF and tabix index. Chromosomes become `chr`-prefixed. The command uses `--check-ref e -m -any --keep-sum AD --old-rec-tag ORIGINAL`. The ORIGINAL tag is essential for matching VEP allele annotations after splitting. The normalized checkpoint contains **26,375 records**, not 26,167: splitting can increase row count.
+Chromosome names are standardized, reference alleles checked, and multiallelic records split with `--check-ref e -m -any --keep-sum AD --old-rec-tag ORIGINAL`. The recorded normalized output contains **26,375 records**. Splitting explains the increase in row count. `ORIGINAL` preserves the relationship to the unsplit source site.
 
-Fresh normalization was not rerun in this environment because the exact FASTA and bcftools were unavailable. Downstream reproduction was tested against the historical normalized checkpoint; this limit is recorded in `docs/validation.json`.
-
-### 03 — Incorporate CADD
+### 03 — CADD annotation
 
 ```bash
 python scripts/03_add_cadd.py results/filter1.norm.vcf.gz results/filter1.cadd.vcf
 ```
 
-Input: normalized VCF and bundled frozen annotation table. Output: same 26,375 records with `INFO/CADD_PHRED` when available. Matching is exact CHROM/POS/REF/ALT. The script fails on keys outside the snapshot rather than silently annotating them as missing.
+CADD PHRED values are joined by exact CHROM/POS/REF/ALT using the fixed v1.7 GRCh38 table. Missing values remain missing; unmatched input keys cause an error. All **26,375 records** are retained. The fixed table records the 13 October annotation checkpoint. The earlier 8 October web-VEP output was the first incorporation of CADD into project files; CADD was not present in the original full VEP.
 
-Provenance: CADD v1.7 GRCh38, precomputed SNVs and gnomAD v4.0 indels, recorded in Daniel's 13 October checkpoint. An earlier 8 October web-VEP output was the first historical incorporation of CADD into project files. This consolidated branch uses the later complete checkpoint; it does not claim CADD was present in the original full VEP.
-
-### 04 — Quality and CADD filter
+### 04 — Quality and CADD
 
 ```bash
 python scripts/04_quality_cadd.py results/filter1.cadd.vcf results/filter2.vcf results/filter2_no_cadd.vcf
 ```
 
-Outside MVA windows: **DP >10, GQ >20, CADD PHRED ≥20**. Inside windows: **CADD ≥10**; DP/GQ become flags rather than exclusion rules. Missing CADD is routed to a separate file after the relevant quality decision. The 159 known positive controls are exact-allele overrides; one is present in the retained output. Non-PASS, intermediate GQ 21–50 and heterozygous ALT balance outside 0.2–0.8 are flagged, not independent hard exclusions. Verified: **2,430 scored/override records and 41 missing-CADD records**.
+Outside MVA windows, retention requires **DP >10, GQ >20 and CADD ≥20**. Inside the windows, **CADD ≥10** is required, while DP/GQ failures are flagged. Missing-CADD records satisfying the applicable quality criteria enter a separate branch. Exact matches to the 159 configured positive controls are protected.
 
-### 05 — Population rarity
+Non-PASS calls, GQ 21–50 and heterozygous ALT balance outside 0.2–0.8 are flagged. Recorded outputs are **2,430 main records and 41 without CADD**.
+
+### 05 — Population frequency
 
 ```bash
 python scripts/05_rarity.py results/filter2.vcf results/filter3.vcf
 python scripts/05_rarity.py results/filter2_no_cadd.vcf results/filter3_no_cadd.vcf
 ```
 
-Both branches use allele-matched CSQ frequencies. Groupmax is the maximum available gnomAD genomes AF among **AFR, AMR, EAS, MID, NFE, SAS**. AMI, ASJ, FIN and REMAINING do not enter this maximum. Keep groupmax **<0.01 (1%)** or missing; exact positive controls are protected. Global AF and excluded-group AF can produce flags, but do not replace this rule. Verified outputs: **235 + 11 records**.
+Groupmax is the largest available allele-matched gnomAD genomes AF among **AFR, AMR, EAS, MID, NFE and SAS**. AMI, ASJ, FIN and REMAINING do not enter this maximum. The rule is **groupmax <1% or unavailable**, with exact positive-control protection. Outputs are **235 main records and 11 without CADD**.
 
-### 06 — Historical stricter shortlist branch
+### 06 — Stricter historical shortlist branch
 
 ```bash
 python scripts/06_shortlist_filter.py results/filter3.vcf --pending-vcf results/filter3_no_cadd.vcf --out-dir results/strict_shortlist
 ```
 
-Default observed historical rules: protect BUB1B chr15:40209701 T>G; otherwise groupmax **<0.0002 (0.02%)** or missing; available CADD **strictly >23 outside** and **strictly >18 inside** windows; missing CADD remains pending. Functional high/intermediate/low labels are reported but do not themselves override those default numeric rules. Verified: **60 selected + 8 pending** from 246 inputs.
+The recorded default rules are groupmax **<0.02% or unavailable**, CADD **>23 outside** or **>18 inside** MVA windows, and protection of BUB1B chr15:40209701 T>G. Missing CADD enters a pending list. Functional-priority labels are descriptive; they do not override these numeric defaults. The output is **60 selected and 8 pending variants**.
 
-These are the actual defaults in the recovered script, not the later proposed thresholds ≥25/≥20. A proposal is not substituted for an observed implementation.
+This branch supported candidate review. The final gene set also incorporated the broader cohort described in the manual-review record. Thresholds proposed during the project are distinguished from those implemented in this version.
 
-### 07 — Explicit manual curation and current ranking input
+### 07 — Manual curation and the 28-gene baseline
 
 ```bash
 python scripts/07_curate.py data/raw/WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz
 ```
 
-Input: complete VEP plus `config/curated_variants.csv`. Output: `results/curated_variants.csv` and `curation_validation.json`. Verified: all **31 selected positions**, their gene-symbol associations and DP/GQ are present in the full VEP; resulting set contains **28 genes**.
+The historical review combined a broader cohort of **2,429 CADD-scored and 68 unscored records**, gene-specific pair proposals, and biological evidence. Its partner search used groupmax **≤5% or unavailable** and CADD **>20 or unavailable**, without an additional DP/GQ filter. The review yielded 33 variants assigned to 29 genes. Removal of the two window-only MAD2L1BP assignments left the **31 baseline variants in 28 genes** used for ranking.
 
-**This is a manual-selection replay, not an automatic filter that discovers 28 genes.** The historical review assembled the original 29 genes from a broader Lucía cohort (2,429 scored + 68 without CADD) and Daniel's pair proposals, not solely from the strict stage 06 output. Its all-target partner search used groupmax ≤5% or absent and CADD >20 or absent, without another DP/GQ cutoff. See `docs/curation_history.md` for the documented merge and gene-level exclusions. The broader cohort's first-principles re-execution is not claimed here; the curated manifest makes its resulting decisions reproducible and inspectable.
+The accepted decisions are recorded in `config/curated_variants.csv`; exclusion rationales appear in `docs/curation_history.md`. Stage 07 validates every exact selected ALT as called in the sample, verifies its own gene annotation, and checks DP, GQ, GT and AD. The outputs are `results/curated_variants.csv` and `results/curation_validation.json`.
 
-The correction before ranking removes both MAD2L1BP window insertions. LR2 and T18 are retained separately in a later review. `docs/curation_decisions.csv` records these actions. Do not apply the strict stage 06 cutoffs to stage 07 and expect the same manually reviewed list: that would silently change the analysis.
+### 08 — Individual matrix and group consensus
 
-### 08 — Decision matrix (last pipeline script)
-
-For a fresh output directory:
+Each member completed the same matrix with independent manual scores. The group ranking is the arithmetic mean of the four definitive scores for each gene. The recorded scores are provided in `config/participant_manual_scores.json`.
 
 ```bash
 python scripts/08_decision_matrix.py --all-participants
 ```
 
-This runs the same matrix for Quetzally, Daniel, Lucía and Tomás using their three recorded manual scores per gene. Their original Drive outputs show that each participant ran the earlier matrix; the current four-person outputs here are **centrally recomputed with their unchanged manual inputs**, not falsely attributed as four new participant executions. Each output directory must be absent before rerunning; move old outputs aside rather than mixing versions.
+Each execution creates a new directory under `results/runs/`, preserving existing recorded results. A specific new directory can be selected with `--output-dir`. The baseline CSV can be selected with `--variants`.
 
-For a new assessor, copy `config/manual_scores_template.json`, replace every null with a score, then run:
+A separate assessor's scores can be supplied as JSON:
 
 ```bash
-python scripts/08_decision_matrix.py --manual my_scores.json --name myname
+python scripts/08_decision_matrix.py --manual my_scores.json --name assessor
 ```
 
-The dictionary key is the exact gene symbol. Each value is a list of three finite numeric values in [0,2], in the order **[MVA link, phenotype fit, literature evidence]**. Fractional scores are permitted. Missing values are never silently replaced by zero.
+Each dictionary key is a gene symbol; its value is a list of three finite scores in [0,2], ordered **[MVA link, phenotype fit, literature evidence]**. Fractional values are allowed. The empty template is `config/manual_scores_template.json`.
 
-Weights: MVA 5, phenotype 4.5, effect 3.5, zygosity 2.5, frequency 2, CADD 1.5, literature 1, call quality 0.25. Gene effect/CADD/frequency/call scores average all included variants. Manual fields remain gene-level; zygosity is a joint configuration. Therefore adding a weak second variant can reduce total score despite increasing zygosity.
+| Component | Weight | Scope |
+|---|---:|---|
+| MVA link | 5.0 | Manual, gene-level |
+| Phenotype fit | 4.5 | Manual, gene-level |
+| Variant effect | 3.5 | Mean across included variants |
+| Zygosity | 2.5 | Joint variant configuration |
+| Population frequency | 2.0 | Mean across included variants |
+| CADD | 1.5 | Mean across included variants |
+| Literature evidence | 1.0 | Manual, gene-level |
+| Call quality | 0.25 | Mean across included variants |
 
-CADD matrix score: clip[2(CADD−20)/(49−20),0,2], missing →1. Frequency matrix score uses frequencies in PERCENT: clip[2(0.1−AF)/(0.1−0.00147),0,2], missing →1. These normalization anchors remain unchanged in the current set. Call quality uses the engine's depth/GQ/allele-balance flags. Consequence overrides and their stable IDs are retained in the single engine implementation.
+The baseline score is the normalized weighted mean, on [0,2]. Its percentage representation is the mean multiplied by 50. Zygosity scores are 0.5 for a single heterozygote or cis pair, 1 for unknown-phase heterozygous pairs, and 2 for homozygosity or a confirmed trans configuration; the engine records X-chromosome handling separately.
 
-The baseline weighted mean is Σ(weight × score)/Σweight on [0,2]; `total` is that mean ×50. Each of **10,000 simulations** independently varies each weight uniformly from 50% to 150% of baseline and renormalizes the weighted sum. Seed=1. The median score and top5/top10/top15/rank≥20 percentages are reported; ties share the minimum rank. Definitive score = **0.8 × baseline mean + 0.2 × simulated median**, on [0,2]. These are prioritization scores, not causal probabilities or submission EPCR.
+CADD is normalized as `clip(2*(CADD-20)/(49-20),0,2)`, with missing CADD assigned 1. Frequency uses AF in percent: `clip(2*(0.1-AF)/(0.1-0.00147),0,2)`, with missing frequency assigned 1. Effect overrides and call-quality flags are defined in the shared engine.
 
-Final stage outputs include each assessor's `gene_ranking_summary.csv`, detailed `gene_ranking.csv`, `variant_matrix.csv`, `sensitivity.csv` and a validated four-assessor `results/consensus.csv`. Consensus is the equal-weight mean of the four definitive scores, converted to percent by multiplying by 50. Rounding occurs only for display.
+Sensitivity analysis uses **10,000 simulations**, seed 1. Each component weight is sampled independently and uniformly between 50% and 150% of its baseline, and each simulated score is renormalized to [0,2]. The engine reports the median score and percentages of simulations in the top 5, top 10, top 15 and rank 20 or later.
 
-## Group consensus and final top ten
+`definitive_score = 0.8*weighted_mean + 0.2*median_score`
+
+The consensus percentage is `50*mean(definitive_score across the four members)`. These are prioritization scores, not calibrated causal probabilities or submission EPCR values.
+
+Outputs include individual detailed rankings and sensitivity tables, `consensus.csv` for all 28 genes, `top10_genes.csv` and `top10_variants.csv`. The last table identifies exact GRCh38 alleles, genotype, phase status and baseline versus post-ranking inclusion.
+
+## Final group ranking
 
 | Rank | Gene | Mean definitive score (%) |
 |---:|---|---:|
@@ -181,26 +206,38 @@ Final stage outputs include each assessor's `gene_ranking_summary.csv`, detailed
 | 28 | ASAP3 | 20.6400 |
 
 
-The group final top ten, obtained by averaging the four assessors' definitive scores, are **BUB1B, TACC2, SMC4, SVIL, LZTR1, CTU2, DIDO1, PRMT6, LRP4, TRDMT1**. LRP4 remains ninth; ROCK1 is eleventh. Subsequent additional-variant review does not modify this ranking.
+The final top ten are **BUB1B, TACC2, SMC4, SVIL, LZTR1, CTU2, DIDO1, PRMT6, LRP4 and TRDMT1**. Exact allele assignments are listed in [the final candidate table](results/top10_variants.csv).
 
-## Subsequent review — additional partner search after the group ranking
+## Subsequent additional-variant review
 
 ```bash
 python tools/review_additional_variants.py data/raw/WGS_EX2312012_HGWCNDSX7.completo.vep.vcf.gz
 ```
 
-Input: full VEP, all matching transcripts and the frozen supplemental CADD snapshot. Output: one audit row per called ALT/gene in the historical 15-gene search panel. It retains original unsplit GT, AD and local phase metadata.
+The full VEP was revisited for the historical 15-gene search panel using all matching transcripts and the original sample genotypes. The exploratory criteria were **DP ≥5, GQ ≥15, groupmax ≤5% or unavailable, and CADD ≥4 or unavailable**. The output records each called allele, its annotations and its review decision.
 
-The latest exploratory screen is **DP ≥5, GQ ≥15, groupmax ≤5% or absent, CADD ≥4 or absent**. It is distinct from all previous filtering thresholds. Passing this screen makes an allele eligible for review, not pathogenic. Missing CADD means no value was recovered in the frozen sources; no damage is inferred.
+Two additional variants were retained: **TACC2 T18, chr10:122194203 CA>C**, and **LRP4 LR2, chr11:46878979 T>C**. They are recorded in `config/post_ranking_additions.csv`. Their phase relative to the respective baseline variant is unknown. The gene order and consensus scores remain those obtained before this review.
 
-Only two **additional** variants were retained for later review: **LRP4 LR2 chr11:46878979 T>C** and **TACC2 T18 chr10:122194203 CA>C**. Each gene's proposed pair has unknown phase. A separate experimental re-ranking assigned zygosity 1, but that experiment is not the group ranking reported above. Neither is represented as confirmed compound heterozygosity. The audit distinguishes pre-existing matrix variants from genuinely new additions. Other candidates fail quality/frequency/CADD, or lack a sufficiently supported additional gene-specific mechanism. Detailed considerations are in `docs/additional_variants.md`; they are not all claimed benign.
+| Gene | GRCh38 allele | GT | Inclusion | Phase |
+|---|---|---|---|---|
+| BUB1B | chr15:40209701 T>G | `0/1` | Ranking baseline | unknown between selected variants |
+| BUB1B | chr15:40220612 T>G | `0/1` | Ranking baseline | unknown between selected variants |
+| TACC2 | chr10:122087185 C>G | `0/1` | Ranking baseline | unknown between selected variants |
+| TACC2 | chr10:122194203 CA>C | `0/1` | Subsequent review | unknown between selected variants |
+| SMC4 | chr3:160411998 G>A | `0/1` | Ranking baseline | single heterozygous candidate |
+| SVIL | chr10:29463555 C>T | `0/1` | Ranking baseline | single heterozygous candidate |
+| LZTR1 | chr22:20996720 C>G | `0/1` | Ranking baseline | single heterozygous candidate |
+| CTU2 | chr16:88714226 AGGTGTG>A | `1/1` | Ranking baseline | same variant on both copies (GT 1/1) |
+| DIDO1 | chr20:62926430 ACCGCAGG>A | `0/1` | Ranking baseline | single heterozygous candidate |
+| PRMT6 | chr1:107056749 G>C | `0/1` | Ranking baseline | single heterozygous candidate |
+| LRP4 | chr11:46874935 C>T | `0/1` | Ranking baseline | unknown between selected variants |
+| LRP4 | chr11:46878979 T>C | `0/1` | Subsequent review | unknown between selected variants |
+| TRDMT1 | chr10:17149087 G>A | `0/1` | Ranking baseline | single heterozygous candidate |
 
-The chronological sequence is: select the 28 genes and 31 baseline variants → each assessor runs the matrix with personal manual scores → average the four definitive scores → obtain the group top ten → reopen the full VEP for additional variants. The additional review does not overwrite the ranked set or automatically change the top ten. The two additions are stored in `config/post_ranking_additions.csv`; they are not read by the matrix engine.
+The final top-ten inventory contains **13 distinct alleles**, including the two later additions. A homozygous variant occupies one allele-record row while being called on both gene copies. Multiple heterozygous variants are not described as confirmed trans without phase evidence. Reasons for non-inclusion of the other additional variants are provided in [additional_variants.md](docs/additional_variants.md), with the per-allele audit in `results/expanded_review.csv`.
 
-## Validation and publication
+## Validation and data access
 
-Stage 01 was rerun against all 4,943,948 VEP records. CADD replay and stages 04–06 were rerun on the complete normalized checkpoint. Stage 07 checked the full input; the separate review tool rescans that full input. All four matrix runs completed 10,000 simulations; their weighted means and definitive-score arithmetic were checked independently. Fresh reference normalization remains an explicit external validation limit. See docs/validation.json.
+Stage 01 was checked against all 4,943,948 VEP records. CADD annotation and stages 04–06 match the recorded normalized checkpoints. The curated baseline was validated against the source alleles, and the four matrix outputs and consensus arithmetic were checked independently. Normalization with the original reference remains a separately documented validation dependency. Details are in [reproducibility.md](docs/reproducibility.md).
 
-This is a replacement repository tree. Unzip, inspect it, and replace the old working tree deliberately; uploading it alongside old files would preserve the existing duplicates. No remote repository or Drive file was changed. Do not upload the separate private-input ZIP, raw VCF, reference or read data. GitHub blocks regular Git files larger than 100 MiB; the genomic file is also access-restricted.
-
-Official sources: [challenge](https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026), [rules](https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026/blob/main/tabs/rules.py), [GitHub size limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github). Participant submissions are subject to the challenge CC-BY terms; raw data are not covered by an unrestricted redistribution permission. Follow the challenge retention/deletion rules.
+The genomic input is access-restricted and is not distributed through this repository. Data use and retention are governed by the [challenge rules](https://huggingface.co/spaces/SageBio/rare-disease-real-kid-mva-hackathon-2026/blob/main/tabs/rules.py). Scientific references appear in [curation_bibliography.md](docs/curation_bibliography.md).

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay exact CADD annotations from the audited Drive checkpoint, without network drift."""
+"""Annotate normalized alleles using the fixed CADD v1.7 annotation table."""
 import argparse,csv,gzip
 from pathlib import Path
 p=argparse.ArgumentParser(description=__doc__)

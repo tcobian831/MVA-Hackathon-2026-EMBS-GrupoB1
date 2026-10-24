@@ -11,4 +11,4 @@ data/reference/*
 *.fai
 __pycache__/
 .venv/
-results/*/
+results/runs/

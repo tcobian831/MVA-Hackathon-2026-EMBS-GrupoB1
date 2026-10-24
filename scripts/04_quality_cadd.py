@@ -22,11 +22,11 @@ def header_lines(controls: str) -> list[str]:
         '##INFO=<ID=F2_FLAGS,Number=.,Type=String,Description="Filter 2 flags on kept records: NOT_PASS, '
         f'LOW_DP (DP<={OUT_MIN_DP}), LOW_GQ (GQ<={OUT_MIN_GQ}), MID_GQ (GQ {OUT_MIN_GQ + 1}-{MID_GQ_MAX}), AB_SKEW (het allele balance outside {AB_LOW}-{AB_HIGH}), '
         'NO_CADD, CADD_BELOW_RULE, POSITIVE_CONTROL">\n',
-        '##INFO=<ID=F2_PC,Number=1,Type=String,Description="Positive control ID (docs/positive_controls_grouped.tsv) '
+        '##INFO=<ID=F2_PC,Number=1,Type=String,Description="Positive control ID (config/positive_controls_grouped.tsv) '
         'matched by exact CHROM/POS/REF/ALT">\n',
         f'##Filter2=<Version="2.0",Outside="DP>{OUT_MIN_DP},GQ>{OUT_MIN_GQ},CADD_PHRED>={OUT_MIN_CADD:g}",'
         f'MidGQ="flag {OUT_MIN_GQ + 1}-{MID_GQ_MAX}",MvaWindow="CADD_PHRED>={WIN_MIN_CADD:g},DP/GQ flag only",PASS="flag only",NoCADD="separate file",'
-        f'PositiveControls="{controls} always kept",Spec="docs/14_FILTER2_QUALITY_CADD.md">\n',
+        f'PositiveControls="{controls} always kept",Spec="docs/reproducibility.md">\n',
     ]
 
 

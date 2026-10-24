@@ -2,6 +2,8 @@
   "source_records_scanned": 4943948,
   "variants": 31,
   "genes": 28,
-  "all_positions_and_gene_symbols_verified": true,
-  "selection": "explicit manual decisions; excludes two post-ranking additions"
+  "exact_called_alleles_verified": true,
+  "allele_specific_gene_annotations_verified": true,
+  "DP_GQ_GT_AD_verified": true,
+  "selection": "recorded manual curation; post-ranking additions excluded"
 }

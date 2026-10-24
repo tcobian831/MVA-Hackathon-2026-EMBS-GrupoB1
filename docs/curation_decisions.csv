@@ -30,7 +30,7 @@ id,gene,position,decision,reason,phase
 31,TSSK6,chr19:19515378,retain,Retained in documented 15 October manual selection; see curation_history.md and component scores,see matrix configuration
 32,ZNF197,chr3:44643497,retain,Retained in documented 15 October manual selection; see curation_history.md and component scores,see matrix configuration
 33,ZNF418,chr19:57926279,retain,Retained in documented 15 October manual selection; see curation_history.md and component scores,see matrix configuration
-34,LRP4,chr11:46878979,retain_after_ranking,Explicit participant-approved additional partner for review,unknown
-35,TACC2,chr10:122194203,retain_after_ranking,Explicit participant-approved additional partner for review,unknown
+34,LRP4,chr11:46878979,retain_after_ranking,Additional candidate retained after variant-level review,unknown
+35,TACC2,chr10:122194203,retain_after_ranking,Additional candidate retained after variant-level review,unknown
 17,MAD2L1BP,chr6:43738633,remove,"Window-only gene assignment; no demonstrated effect on MAD2L1BP; weak AD 7,1,0",original GT 1/2
 18,MAD2L1BP,chr6:43738633,remove,"Window-only gene assignment; no demonstrated effect on MAD2L1BP; weak AD 7,1,0",original GT 1/2
