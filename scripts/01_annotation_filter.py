@@ -43,7 +43,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("input", help="VEP-annotated VCF (.vcf or .vcf.gz)")
     ap.add_argument("output", help="output VCF (uncompressed)")
-    ap.add_argument("--genes", default=str(Path(__file__).with_name("mva_genes.tsv")))
+    ap.add_argument("--genes", default=str(Path(__file__).resolve().parents[1] / "config" / "mva_genes.tsv"))
     ap.add_argument("--window", type=int, default=100000)
     args = ap.parse_args()
 
@@ -117,3 +117,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

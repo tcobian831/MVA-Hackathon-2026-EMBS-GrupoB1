@@ -1,0 +1,3 @@
+id,gene,variant,chrom,pos,type,cadd,grpmax_pct,gt,dp,gq,ad_ref,ad_alt
+34,LRP4,Asn1022Asp,chr11,46878979,missense,19.53,0.1661,0/1,43,99,23,20
+35,TACC2,intronic_del1bp,chr10,122194203,intron_variant,,0.00294,0/1,44,99,26,18

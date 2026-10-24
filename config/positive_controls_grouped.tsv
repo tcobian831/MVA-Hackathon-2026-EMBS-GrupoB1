@@ -1,0 +1,160 @@
+id	group	group_name	gene	variant_name	type	chrom	pos	ref	alt	cadd_phred	gnomad_popmax	strict_rule_that_would_delete_it	source
+PC001	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.36-1G>A	Splice site destroyed	chr15	40165052	G	A	32	absent	none	ClinVar VCV002083538.4
+PC002	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.100C>T (p.Gln34Ter)	Stop or frameshift (protein cut short)	chr15	40165117	C	T	51	absent	none	ClinVar VCV004924213.1
+PC003	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.169C>T (p.Gln57Ter)	Stop or frameshift (protein cut short)	chr15	40165186	C	T	42	absent	none	ClinVar VCV001386253.6
+PC004	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.192del (p.Glu63_Tyr64insTer)	Stop or frameshift (protein cut short)	chr15	40170073	AT	A	no score	absent	no CADD score	ClinVar VCV003602713.1
+PC005	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.199C>T (p.Arg67Ter)	Stop or frameshift (protein cut short)	chr15	40170081	C	T	39	6.55e-05	none	ClinVar VCV001450254.9
+PC006	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.239+2T>C	Splice site destroyed	chr15	40170123	T	C	31	absent	none	ClinVar VCV003577080.1
+PC007	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.243del (p.Arg80_Tyr81insTer)	Stop or frameshift (protein cut short)	chr15	40170539	AT	A	no score	absent	no CADD score	ClinVar VCV003577081.3
+PC008	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.282_283del (p.Glu95_Ser96insTer)	Stop or frameshift (protein cut short)	chr15	40170578	AGG	A	no score	absent	no CADD score	ClinVar VCV004712329.1
+PC009	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.310del (p.Arg104fs)	Stop or frameshift (protein cut short)	chr15	40170604	GA	G	no score	absent	no CADD score	ClinVar VCV001946449.5
+PC010	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.340C>T (p.Arg114Ter)	Stop or frameshift (protein cut short)	chr15	40170637	C	T	37	absent	none	ClinVar VCV000434546.13
+PC011	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.358C>T (p.Arg120Ter)	Stop or frameshift (protein cut short)	chr15	40170655	C	T	37	absent	none	ClinVar VCV000851299.8
+PC012	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.422dup (p.Tyr141Ter)	Stop or frameshift (protein cut short)	chr15	40176513	T	TA	no score	absent	no CADD score	ClinVar VCV001073991.7
+PC013	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.464del (p.Tyr155fs)	Stop or frameshift (protein cut short)	chr15	40176555	TA	T	no score	absent	no CADD score	ClinVar VCV003723848.2
+PC014	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.473G>A (p.Trp158Ter)	Stop or frameshift (protein cut short)	chr15	40176565	G	A	43	absent	none	ClinVar VCV000998296.1
+PC015	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.564_571dup (p.Ser191fs)	Stop or frameshift (protein cut short)	chr15	40176655	G	GACTACAGT	no score	absent	no CADD score	ClinVar VCV003608325.2
+PC016	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.578del (p.His193fs)	Stop or frameshift (protein cut short)	chr15	40176669	CA	C	no score	absent	no CADD score	ClinVar VCV000947291.7
+PC017	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.580C>T (p.Arg194Ter)	Stop or frameshift (protein cut short)	chr15	40176672	C	T	36	1.47e-05	none	ClinVar VCV000006760.8
+PC018	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.581+1G>T	Splice site destroyed	chr15	40176674	G	T	33	2.41e-05	none	ClinVar VCV001510796.6
+PC019	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.595C>T (p.Arg199Ter)	Stop or frameshift (protein cut short)	chr15	40183727	C	T	37	absent	none	ClinVar VCV000939671.9
+PC020	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.667C>T (p.Gln223Ter)	Stop or frameshift (protein cut short)	chr15	40183799	C	T	37	7.24e-05	none	ClinVar VCV001172740.2
+PC021	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.670C>T (p.Arg224Ter)	Stop or frameshift (protein cut short)	chr15	40183802	C	T	35	absent	none	ClinVar VCV004541918.2
+PC022	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.693_694insTT (p.Ser232fs)	Stop or frameshift (protein cut short)	chr15	40183825	G	GTT	no score	absent	no CADD score	ClinVar VCV001074988.8
+PC023	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.709_712del (p.Thr237fs)	Stop or frameshift (protein cut short)	chr15	40183838	AAGAC	A	32	2.41e-05	none	ClinVar VCV000849777.7
+PC024	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.751+1G>T	Splice site destroyed	chr15	40183884	G	T	36	absent	none	ClinVar VCV003667271.2
+PC025	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.803dup (p.Asn268fs)	Stop or frameshift (protein cut short)	chr15	40185212	C	CA	no score	absent	no CADD score	ClinVar VCV003336280.1
+PC026	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.799C>T (p.Gln267Ter)	Stop or frameshift (protein cut short)	chr15	40185212	C	T	34	0.000208	none	ClinVar VCV001070955.8
+PC027	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.871del (p.Thr291fs)	Stop or frameshift (protein cut short)	chr15	40185283	TA	T	no score	absent	no CADD score	ClinVar VCV002152812.4
+PC028	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.877C>T (p.Gln293Ter)	Stop or frameshift (protein cut short)	chr15	40185290	C	T	34	absent	none	ClinVar VCV001452898.6
+PC029	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.897dup (p.Met300fs)	Stop or frameshift (protein cut short)	chr15	40185304	A	AC	no score	absent	no CADD score	ClinVar VCV002756659.3
+PC030	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.897del (p.Met300fs)	Stop or frameshift (protein cut short)	chr15	40185304	AC	A	32	6.56e-05	none	ClinVar VCV002913819.3
+PC031	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.913G>T (p.Glu305Ter)	Stop or frameshift (protein cut short)	chr15	40185326	G	T	39	absent	none	ClinVar VCV004277610.1
+PC032	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.925C>T (p.Gln309Ter)	Stop or frameshift (protein cut short)	chr15	40185338	C	T	36	absent	none	ClinVar VCV000854842.7
+PC033	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.948_966del19 (p.Arg317fs)	Stop or frameshift (protein cut short)	chr15	40185346	CCCTTGGAACACAGGCAGGT	C	34	0	none	ClinVar VCV002690554.2
+PC034	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.967-2A>T	Splice site destroyed	chr15	40185549	A	T	33	absent	none	ClinVar VCV000863360.8
+PC035	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.995del (p.Ala332fs)	Stop or frameshift (protein cut short)	chr15	40185578	GC	G	no score	absent	no CADD score	ClinVar VCV003577084.1
+PC036	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1045del (p.Arg349fs)	Stop or frameshift (protein cut short)	chr15	40185628	AC	A	no score	absent	no CADD score	ClinVar VCV001320272.1
+PC037	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1058+2T>G	Splice site destroyed	chr15	40185644	T	G	29.7	absent	none	ClinVar VCV004999248.1
+PC038	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1141del (p.Arg381fs)	Stop or frameshift (protein cut short)	chr15	40196624	CA	C	no score	absent	no CADD score	ClinVar VCV002034835.4
+PC039	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1147C>T (p.Gln383Ter)	Stop or frameshift (protein cut short)	chr15	40196633	C	T	39	absent	none	ClinVar VCV004713327.1
+PC040	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1198A>T (p.Lys400Ter)	Stop or frameshift (protein cut short)	chr15	40196684	A	T	40	absent	none	ClinVar VCV002916224.3
+PC041	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1298T>A (p.Leu433Ter)	Stop or frameshift (protein cut short)	chr15	40199624	T	A	37	absent	none	ClinVar VCV001398305.6
+PC042	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1302del (p.Ser435fs)	Stop or frameshift (protein cut short)	chr15	40199626	AC	A	no score	absent	no CADD score	ClinVar VCV003018326.3
+PC043	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1313_1317del (p.Lys438fs)	Stop or frameshift (protein cut short)	chr15	40199633	CAGAGA	C	no score	absent	no CADD score	ClinVar VCV002729407.3
+PC044	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1372del (p.Thr458fs)	Stop or frameshift (protein cut short)	chr15	40199695	CA	C	no score	absent	no CADD score	ClinVar VCV002431740.1
+PC045	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1378C>T (p.Gln460Ter)	Stop or frameshift (protein cut short)	chr15	40199704	C	T	39	absent	none	ClinVar VCV002187691.4
+PC046	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1387A>T (p.Arg463Ter)	Stop or frameshift (protein cut short)	chr15	40199713	A	T	38	absent	none	ClinVar VCV000572796.8
+PC047	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1402-1G>T	Splice site destroyed	chr15	40200243	G	T	29	absent	none	ClinVar VCV000006767.2
+PC048	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1441C>T (p.Gln481Ter)	Stop or frameshift (protein cut short)	chr15	40200283	C	T	33	absent	none	ClinVar VCV001408436.6
+PC049	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1466_1470dup (p.Gly491fs)	Stop or frameshift (protein cut short)	chr15	40200306	A	AATACC	no score	absent	no CADD score	ClinVar VCV001405980.6
+PC050	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1512T>A (p.Cys504Ter)	Stop or frameshift (protein cut short)	chr15	40200354	T	A	34	absent	none	ClinVar VCV003660229.2
+PC051	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1648C>T (p.Arg550Ter)	Stop or frameshift (protein cut short)	chr15	40202608	C	T	35	0.000207	none	ClinVar VCV000438799.8
+PC052	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1663C>T (p.Arg555Ter)	Stop or frameshift (protein cut short)	chr15	40202623	C	T	36	absent	none	ClinVar VCV002141736.4
+PC053	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1672del (p.Ala559fs)	Stop or frameshift (protein cut short)	chr15	40202628	AC	A	no score	absent	no CADD score	ClinVar VCV001325385.4
+PC054	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1743del (p.Phe581fs)	Stop or frameshift (protein cut short)	chr15	40206189	AT	A	no score	absent	no CADD score	ClinVar VCV002196645.4
+PC055	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1833del (p.Phe611fs)	Stop or frameshift (protein cut short)	chr15	40206279	CT	C	no score	absent	no CADD score	ClinVar VCV000006768.1
+PC056	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1906del (p.Glu636fs)	Stop or frameshift (protein cut short)	chr15	40206354	TG	T	no score	absent	no CADD score	ClinVar VCV001443723.6
+PC057	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.1954C>T (p.Gln652Ter)	Stop or frameshift (protein cut short)	chr15	40206403	C	T	36	absent	none	ClinVar VCV000581252.8
+PC058	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2009+1G>A	Splice site destroyed	chr15	40206459	G	A	34	0.000478	none	ClinVar VCV004856965.2
+PC059	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2153del (p.Thr718fs)	Stop or frameshift (protein cut short)	chr15	40209643	AC	A	no score	absent	no CADD score	ClinVar VCV002202424.4
+PC060	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2208_2211dup (p.Ser738fs)	Stop or frameshift (protein cut short)	chr15	40209697	G	GAGTT	no score	absent	no CADD score	ClinVar VCV000006763.4
+PC061	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2210del (p.Glu736_Leu737insTer)	Stop or frameshift (protein cut short)	chr15	40209699	GT	G	no score	absent	no CADD score	ClinVar VCV001453887.6
+PC062	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2210T>G (p.Leu737Ter)	Stop or frameshift (protein cut short)	chr15	40209701	T	G	36	7.35e-05	none	ClinVar VCV000533901.9
+PC063	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2285-2A>G	Splice site destroyed	chr15	40210108	A	G	25.9	1.47e-05	none	ClinVar VCV002170845.4
+PC064	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2298C>G (p.Tyr766Ter)	Stop or frameshift (protein cut short)	chr15	40210123	C	G	35	absent	none	ClinVar VCV002750610.3
+PC065	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2308C>T (p.Arg770Ter)	Stop or frameshift (protein cut short)	chr15	40210133	C	T	36	1.47e-05	none	ClinVar VCV000403749.8
+PC066	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2316C>G (p.Tyr772Ter)	Stop or frameshift (protein cut short)	chr15	40210141	C	G	34	absent	none	ClinVar VCV000639058.8
+PC067	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2328dup (p.Asp777fs)	Stop or frameshift (protein cut short)	chr15	40210151	G	GA	35	2.94e-05	none	ClinVar VCV001325384.7
+PC068	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2334C>G (p.Tyr778Ter)	Stop or frameshift (protein cut short)	chr15	40210159	C	G	35	absent	none	ClinVar VCV001392551.6
+PC069	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2363_2364del (p.Ser788fs)	Stop or frameshift (protein cut short)	chr15	40210185	ACT	A	31	2.42e-05	none	ClinVar VCV000986977.7
+PC070	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2364dup (p.Ala789fs)	Stop or frameshift (protein cut short)	chr15	40210188	C	CT	no score	absent	no CADD score	ClinVar VCV003729705.2
+PC071	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2386-2A>G	Splice site destroyed	chr15	40212497	A	G	24.9	absent	none	ClinVar VCV001066212.9
+PC072	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2436_2439dup (p.Arg814fs)	Stop or frameshift (protein cut short)	chr15	40212546	A	AAAGG	no score	absent	no CADD score	ClinVar VCV004712931.1
+PC073	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2478T>A (p.Tyr826Ter)	Stop or frameshift (protein cut short)	chr15	40212591	T	A	34	absent	none	ClinVar VCV003385277.1
+PC074	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2478T>G (p.Tyr826Ter)	Stop or frameshift (protein cut short)	chr15	40212591	T	G	34	absent	none	ClinVar VCV000959090.7
+PC075	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2636dup (p.His880fs)	Stop or frameshift (protein cut short)	chr15	40213431	G	GT	no score	absent	no CADD score	ClinVar VCV001299567.1
+PC076	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2748_2749delinsA (p.Asp917fs)	Stop or frameshift (protein cut short)	chr15	40217565	TG	A	no score	absent	no CADD score	ClinVar VCV004856835.2
+PC077	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2786del (p.Gly929fs)	Stop or frameshift (protein cut short)	chr15	40217601	CG	C	no score	absent	no CADD score	ClinVar VCV004924221.1
+PC078	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2807_2810del (p.Leu936fs)	Stop or frameshift (protein cut short)	chr15	40217623	CTGGA	C	no score	absent	no CADD score	ClinVar VCV004277791.1
+PC079	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2848C>T (p.Gln950Ter)	Stop or frameshift (protein cut short)	chr15	40217665	C	T	44	absent	none	ClinVar VCV001980347.4
+PC080	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2851-1G>C	Splice site destroyed	chr15	40218455	G	C	29.8	absent	none	ClinVar VCV000591391.4
+PC081	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2869del (p.Ala957fs)	Stop or frameshift (protein cut short)	chr15	40218473	AG	A	no score	absent	no CADD score	ClinVar VCV000817359.4
+PC082	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2876T>G (p.Leu959Ter)	Stop or frameshift (protein cut short)	chr15	40218481	T	G	40	absent	none	ClinVar VCV001367214.6
+PC083	1	Classic MVA genes: broken copy	BUB1B	NM_001211.6(BUB1B):c.2896A>T (p.Lys966Ter)	Stop or frameshift (protein cut short)	chr15	40218501	A	T	47	absent	none	ClinVar VCV002820924.3
+PC084	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.1A>T (p.Met1Leu)	Stop or frameshift (protein cut short)	chr11	95790699	A	T	21.1	absent	none	ClinVar VCV004913591.1
+PC085	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.20_21del (p.Ser7fs)	Stop or frameshift (protein cut short)	chr11	95790714	GTC	G	no score	absent	no CADD score	ClinVar VCV002169972.4
+PC086	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.46-2A>T	Splice site destroyed	chr11	95799230	A	T	29.4	2.94e-05	none	ClinVar VCV002161490.4
+PC087	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.241C>T (p.Arg81Ter)	Stop or frameshift (protein cut short)	chr11	95812970	C	T	40	absent	none	ClinVar VCV000030692.10
+PC088	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.312_313del (p.Tyr104_Lys105delinsTer)	Stop or frameshift (protein cut short)	chr11	95813037	AAT	A	no score	absent	no CADD score	ClinVar VCV002873280.3
+PC089	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.382+2T>C	Splice site destroyed	chr11	95813113	T	C	28.4	absent	none	ClinVar VCV000977798.3
+PC090	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.451C>T (p.Arg151Ter)	Stop or frameshift (protein cut short)	chr11	95813536	C	T	36	1.47e-05	none	ClinVar VCV000643769.6
+PC091	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.520_521del (p.Glu174fs)	Stop or frameshift (protein cut short)	chr11	95817798	AAG	A	no score	absent	no CADD score	ClinVar VCV000030690.1
+PC092	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.523C>T (p.Arg175Ter)	Stop or frameshift (protein cut short)	chr11	95817805	C	T	39	1.47e-05	none	ClinVar VCV001421218.6
+PC093	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.600del (p.Thr201fs)	Stop or frameshift (protein cut short)	chr11	95817880	AC	A	no score	absent	no CADD score	ClinVar VCV004751150.1
+PC094	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.622-2A>G	Splice site destroyed	chr11	95818825	A	G	34	absent	none	ClinVar VCV002828215.3
+PC095	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.699+1G>T	Splice site destroyed	chr11	95818905	G	T	34	absent	none	ClinVar VCV002884194.3
+PC096	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.724del (p.Arg242fs)	Stop or frameshift (protein cut short)	chr11	95821894	TA	T	no score	absent	no CADD score	ClinVar VCV000431798.2
+PC097	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.778A>T (p.Lys260Ter)	Stop or frameshift (protein cut short)	chr11	95821949	A	T	38	6.55e-05	none	ClinVar VCV000936628.7
+PC098	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.915_925dup (p.Leu309fs)	Stop or frameshift (protein cut short)	chr11	95827811	T	TAGCCAATGTTC	29.4	0.000131	none	ClinVar VCV000030691.11
+PC099	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.973C>T (p.Arg325Ter)	Stop or frameshift (protein cut short)	chr11	95827873	C	T	39	absent	none	ClinVar VCV003574131.1
+PC100	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.1015C>T (p.Arg339Ter)	Stop or frameshift (protein cut short)	chr11	95827915	C	T	36	2.41e-05	none	ClinVar VCV001030345.7
+PC101	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.1117C>T (p.Gln373Ter)	Stop or frameshift (protein cut short)	chr11	95828017	C	T	51	absent	none	ClinVar VCV000574305.6
+PC102	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.1388_1391del (p.Lys463fs)	Stop or frameshift (protein cut short)	chr11	95831136	TAAGA	T	no score	absent	no CADD score	ClinVar VCV003336980.1
+PC103	1	Classic MVA genes: broken copy	CEP57	NM_014679.5(CEP57):c.1402del (p.Lys467_Leu468insTer)	Stop or frameshift (protein cut short)	chr11	95831154	AC	A	no score	absent	no CADD score	ClinVar VCV000638495.3
+PC104	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.420dup (p.Tyr141fs)	Stop or frameshift (protein cut short)	chr5	900524	T	TA	no score	absent	no CADD score	ClinVar VCV003910602.1
+PC105	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.672+1G>A	Splice site destroyed	chr5	907194	G	A	32	absent	none	ClinVar VCV003645934.2
+PC106	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.673-1G>C	Splice site destroyed	chr5	907987	G	C	35	absent	none	ClinVar VCV000431046.1
+PC107	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.720_723del (p.Ile240fs)	Stop or frameshift (protein cut short)	chr5	908029	TTTGA	T	no score	absent	no CADD score	ClinVar VCV003723852.2
+PC108	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.1021-1G>C	Splice site destroyed	chr5	914464	G	C	33	absent	none	ClinVar VCV004070948.1
+PC109	1	Classic MVA genes: broken copy	TRIP13	NM_004237.4(TRIP13):c.1060C>T (p.Arg354Ter)	Stop or frameshift (protein cut short)	chr5	914504	C	T	38	absent	none	ClinVar VCV000431045.1
+PC110	2	Classic MVA genes: subtle copy	BUB1B	NC_000015.10:g.40117088G>A	Regulatory (outside the gene, controls its level)	chr15	40117088	G	A	7.22	0.00116	CADD below 10; popmax 0.1% or more	Ochiai et al. 2014
+PC111	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Tyr155Cys	Missense (one amino acid changed)	chr15	40176556	A	G	29.3	9.65e-05	none	Suijkerbuijk et al. 2010
+PC112	2	Classic MVA genes: subtle copy	BUB1B	NM_001211.6(BUB1B):c.1401G>T (p.Gln467His)	Missense (one amino acid changed)	chr15	40199727	G	T	34	absent	none	ClinVar VCV002503511.1
+PC113	2	Classic MVA genes: subtle copy	BUB1B	NM_001211.6:c.1402-5A>G	Near a splice site	chr15	40200239	A	G	25.2	absent	none	ClinVar VCV000006769.1 + Kawakami et al. 2024
+PC114	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Arg550Gln	Missense (one amino acid changed)	chr15	40202609	G	A	0.009	0.0209	CADD below 10; popmax 1% or more	Hanks et al. 2004
+PC115	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Arg727Cys	Missense (one amino acid changed)	chr15	40209670	C	T	33	0.00166	popmax 0.1% or more	Suijkerbuijk et al. 2010
+PC116	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Arg814His	Missense (one amino acid changed)	chr15	40212554	G	A	29.7	9.44e-05	none	Suijkerbuijk et al. 2010
+PC117	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Leu844Phe	Missense (one amino acid changed)	chr15	40212643	C	T	22.1	2.94e-05	none	Hanks et al. 2004
+PC118	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Ile909Thr	Missense (one amino acid changed)	chr15	40217543	T	C	25.3	absent	none	Suijkerbuijk et al. 2010
+PC119	2	Classic MVA genes: subtle copy	BUB1B	ENSP00000287598:p.Leu1012Pro	Missense (one amino acid changed)	chr15	40220641	T	C	26.7	2.94e-05	none	Suijkerbuijk et al. 2010
+PC120	2	Classic MVA genes: subtle copy	TRIP13	NM_004237.4(TRIP13):c.518G>A (p.Arg173Gln)	Missense (one amino acid changed)	chr5	901414	G	A	28.9	absent	none	ClinVar VCV000977642.3
+PC121	2	Classic MVA genes: subtle copy	TRIP13	NM_004237.4(TRIP13):c.592A>G (p.Ile198Val)	Missense (one amino acid changed)	chr5	904204	A	G	18	absent	CADD below 20	ClinVar VCV000977644.2
+PC122	2	Classic MVA genes: subtle copy	TRIP13	NM_004237.4(TRIP13):c.739G>A (p.Val247Met)	Missense (one amino acid changed)	chr5	908054	G	A	28	absent	none	ClinVar VCV000977645.2
+PC123	3	Other window genes: broken copy	CENATAC	NM_198489.3(CENATAC):c.805+2_805+19del	Splice site destroyed	chr11	119015081	AAAGTAAGTAAACTAATTC	A	no score	absent	no CADD score	ClinVar VCV002627019.1
+PC124	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.1882G>T (p.Glu628Ter)	Stop or frameshift (protein cut short)	chr7	1898316	C	A	52	absent	none	ClinVar VCV002443778.1
+PC125	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.1708C>T (p.Arg570Ter)	Stop or frameshift (protein cut short)	chr7	1936786	G	A	47	4.41e-05	none	ClinVar VCV004335983.3
+PC126	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.1585C>T (p.Arg529Ter)	Stop or frameshift (protein cut short)	chr7	1957640	G	A	37	0.000478	none	ClinVar VCV004850229.1
+PC127	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.1396C>T (p.Gln466Ter)	Stop or frameshift (protein cut short)	chr7	2002085	G	A	43	7.24e-05	none	ClinVar VCV002576571.2
+PC128	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.820_823del (p.Glu274fs)	Stop or frameshift (protein cut short)	chr7	2215985	GTCTC	G	no score	absent	no CADD score	ClinVar VCV002576570.2
+PC129	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.244C>T (p.Arg82Ter)	Stop or frameshift (protein cut short)	chr7	2225457	G	A	37	4.83e-05	none	ClinVar VCV004690248.1
+PC130	3	Other window genes: broken copy	MAD1L1	NM_001013836.2(MAD1L1):c.196C>T (p.Gln66Ter)	Stop or frameshift (protein cut short)	chr7	2225505	G	A	41	absent	none	ClinVar VCV002443777.1
+PC131	3	Other window genes: broken copy	BUB1	NM_004336.5(BUB1):c.3069del (p.His1024fs)	Stop or frameshift (protein cut short)	chr2	110638152	GA	G	no score	absent	no CADD score	ClinVar VCV000006759.1
+PC132	3	Other window genes: broken copy	BUB1	NM_004336.5(BUB1):c.2625+1G>A	Splice site destroyed	chr2	110641641	C	T	33	absent	none	ClinVar VCV001806482.1
+PC133	3	Other window genes: broken copy	BUB1	NM_004336.5(BUB1):c.2197dup (p.Ala733fs)	Stop or frameshift (protein cut short)	chr2	110650551	G	GC	no score	absent	no CADD score	ClinVar VCV001806483.1
+PC134	3	Other window genes: broken copy	BUB1	NM_004336.5(BUB1):c.1430dup (p.Pro478fs)	Stop or frameshift (protein cut short)	chr2	110658495	A	AG	no score	absent	no CADD score	ClinVar VCV003377649.1
+PC135	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.330+1G>A	Splice site destroyed	chr1	43359639	G	A	33	absent	none	ClinVar VCV002443924.2
+PC136	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.544C>T (p.Arg182Ter)	Stop or frameshift (protein cut short)	chr1	43360085	C	T	42	absent	none	ClinVar VCV002443918.2
+PC137	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.784C>T (p.Arg262Ter)	Stop or frameshift (protein cut short)	chr1	43360529	C	T	49	2.41e-05	none	ClinVar VCV002443922.2
+PC138	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.810_813dup (p.Gly272fs)	Stop or frameshift (protein cut short)	chr1	43360553	C	CGAGT	no score	absent	no CADD score	ClinVar VCV002443919.2
+PC139	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.964C>T (p.Arg322Ter)	Stop or frameshift (protein cut short)	chr1	43360848	C	T	38	9.65e-05	none	ClinVar VCV002443923.2
+PC140	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.1092T>A (p.Cys364Ter)	Stop or frameshift (protein cut short)	chr1	43361134	T	A	39	absent	none	ClinVar VCV004850379.1
+PC141	3	Other window genes: broken copy	CDC20	NM_001255.3(CDC20):c.1176_1179del (p.Ala391_Cys392insTer)	Stop or frameshift (protein cut short)	chr1	43361214	CCTGT	C	35	2.42e-05	none	ClinVar VCV002443920.2
+PC142	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.568C>T (p.Arg190Ter)	Stop or frameshift (protein cut short)	chr10	100916953	C	T	34	1.47e-05	none	ClinVar VCV002443713.1
+PC143	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.1006dup (p.Arg336fs)	Stop or frameshift (protein cut short)	chr10	100924001	G	GA	no score	absent	no CADD score	ClinVar VCV002443709.1
+PC144	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.1710_1714dup (p.Pro572fs)	Stop or frameshift (protein cut short)	chr10	100924709	G	GCAGCA	no score	absent	no CADD score	ClinVar VCV004845892.1
+PC145	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.1966_1969dup (p.Thr657fs)	Stop or frameshift (protein cut short)	chr10	100924966	C	CTATA	no score	absent	no CADD score	ClinVar VCV004538378.1
+PC146	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.2347_2348del (p.Asp783fs)	Stop or frameshift (protein cut short)	chr10	100930987	CAG	C	no score	absent	no CADD score	ClinVar VCV002443712.1
+PC147	3	Other window genes: broken copy	SLF2	NM_018121.4(SLF2):c.2719dup (p.Ser907fs)	Stop or frameshift (protein cut short)	chr10	100944084	A	AT	no score	absent	no CADD score	ClinVar VCV002443711.1
+PC148	3	Other window genes: broken copy	SMC5	NM_015110.4(SMC5):c.349G>T (p.Gly117Ter)	Stop or frameshift (protein cut short)	chr9	70267944	G	T	39	absent	none	ClinVar VCV004856047.1
+PC149	3	Other window genes: broken copy	SMC5	NM_015110.4(SMC5):c.1273C>T (p.Arg425Ter)	Stop or frameshift (protein cut short)	chr9	70298185	C	T	36	absent	none	ClinVar VCV002443707.1
+PC150	3	Other window genes: broken copy	SMC5	NM_015110.4(SMC5):c.1694_1697del (p.Ser564_Tyr565insTer)	Stop or frameshift (protein cut short)	chr9	70315463	CTTAT	C	no score	absent	no CADD score	ClinVar VCV004845894.1
+PC151	4	Other window genes: subtle copy	CENATAC	NM_198489.3(CENATAC):c.803A>T (p.Glu268Val)	Missense (one amino acid changed)	chr11	119015081	A	T	26.5	0.000479	none	ClinVar VCV002627020.1
+PC152	4	Other window genes: subtle copy	CDC20	NM_001255.3(CDC20):c.631G>A (p.Ala211Thr)	Missense (one amino acid changed)	chr1	43360267	G	A	24.1	absent	none	ClinVar VCV002443921.2
+PC153	4	Other window genes: subtle copy	CDC20	NM_001255.3(CDC20):c.683A>G (p.Tyr228Cys)	Missense (one amino acid changed)	chr1	43360319	A	G	28.1	absent	none	ClinVar VCV002443916.2
+PC154	4	Other window genes: subtle copy	CDC20	NM_001255.3(CDC20):c.965G>A (p.Arg322Gln)	Missense (one amino acid changed)	chr1	43360849	G	A	24	0.000577	none	ClinVar VCV002443917.2
+PC155	4	Other window genes: subtle copy	CDC20	NM_001255.3(CDC20):c.1155G>C (p.Trp385Cys)	Missense (one amino acid changed)	chr1	43361197	G	C	33	absent	none	ClinVar VCV002443925.2
+PC156	4	Other window genes: subtle copy	SLF2	NM_018121.4(SLF2):c.915_915+2del	In-frame deletion or insertion	chr10	100917297	TGTG	T	no score	absent	no CADD score	ClinVar VCV004850587.1
+PC157	4	Other window genes: subtle copy	SLF2	NM_018121.4(SLF2):c.2582A>T (p.Asn861Ile)	Missense (one amino acid changed)	chr10	100938664	A	T	26.3	absent	none	ClinVar VCV002443710.1
+PC158	4	Other window genes: subtle copy	SMC5	NM_015110.4(SMC5):c.1110GAG[1] (p.Arg372del)	In-frame deletion or insertion	chr9	70298021	AGAG	A	no score	absent	no CADD score	ClinVar VCV002443706.1
+PC159	4	Other window genes: subtle copy	SMC5	NM_015110.4(SMC5):c.2968C>G (p.His990Asp)	Missense (one amino acid changed)	chr9	70350192	C	G	28.1	absent	none	ClinVar VCV002443708.1

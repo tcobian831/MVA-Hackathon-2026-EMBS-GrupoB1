@@ -1,0 +1,7 @@
+{
+  "source_records_scanned": 4943948,
+  "variants": 31,
+  "genes": 28,
+  "all_positions_and_gene_symbols_verified": true,
+  "selection": "explicit manual decisions; excludes two post-ranking additions"
+}
